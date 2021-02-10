@@ -54,6 +54,14 @@ $ docker-compose up
 *Both storefront and dashboard are quite big frontend projects and it might take up to few minutes for them to compile depending on your CPU. If nothing shows up on port 3000 or 9000 wait until `Compiled successfully` shows in the console output.*
 
 
+9. Run tenants
+```
+python manage.py makemigrations
+python manage.py migrate_schemas --shared
+python manage.py create_tenant
+http://localhost:8000
+```
+
 ## How to update the subprojects to the newest versions?
 This repository contains newest stable versions.
 When new release appear, pull new version of this repository.
